@@ -1,0 +1,874 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Sankalp Khatake | AI Engineer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;700;900&family=Rajdhani:wght@300;400;500;600;700&family=JetBrains+Mono:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- PRELOADER -->
+<div id="preloader">
+  <div class="pre-inner">
+    <div class="pre-logo">SK</div>
+    <div class="pre-bar"><div class="pre-fill" id="preFill"></div></div>
+    <div class="pre-text" id="preText">Booting AI Systems...</div>
+    <div class="pre-dots"><span></span><span></span><span></span></div>
+  </div>
+</div>
+
+<!-- CURSOR -->
+<div id="cursor"></div>
+<div id="cursor-trail"></div>
+
+<!-- SCROLL PROGRESS -->
+<div id="scroll-progress"></div>
+
+<!-- BG CANVAS -->
+<canvas id="bg-canvas"></canvas>
+
+<!-- THEME TOGGLE (fixed) -->
+<button id="theme-toggle" aria-label="Toggle theme">
+  <span class="theme-icon-dark">🌙</span>
+  <span class="theme-icon-light">☀️</span>
+</button>
+
+<!-- ══════════════ NAV ══════════════ -->
+<nav id="navbar">
+  <div class="nav-brand">
+    <span class="brand-bracket">[</span>
+    <span class="brand-name">SK</span>
+    <span class="brand-bracket">]</span>
+    <span class="brand-blink">_</span>
+  </div>
+  <ul class="nav-links">
+    <li><a href="#hero">Home</a></li>
+    <li><a href="#about">About</a></li>
+    <li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#experience">Experience</a></li>
+    <li><a href="#certifications">Certs</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <div class="nav-status">
+      <span class="status-dot"></span>
+      <span>Available for Work</span>
+    </div>
+  </div>
+  <button class="hamburger" id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- MOBILE MENU -->
+<div class="mobile-menu" id="mobileMenu">
+  <ul>
+    <li><a href="#hero"           onclick="closeMobile()">Home</a></li>
+    <li><a href="#about"          onclick="closeMobile()">About</a></li>
+    <li><a href="#skills"         onclick="closeMobile()">Skills</a></li>
+    <li><a href="#projects"       onclick="closeMobile()">Projects</a></li>
+    <li><a href="#experience"     onclick="closeMobile()">Experience</a></li>
+    <li><a href="#certifications" onclick="closeMobile()">Certifications</a></li>
+    <li><a href="#contact"        onclick="closeMobile()">Contact</a></li>
+  </ul>
+</div>
+
+<!-- ══════════════════════════════════════ HERO ══════ -->
+<section id="hero">
+  <div class="hero-wrap">
+
+    <!-- LEFT -->
+    <div class="hero-left">
+      <div class="hero-eyebrow reveal-up">
+        <span class="ey-line"></span>
+        <span class="ey-text">Building Future Intelligence</span>
+        <span class="ey-line"></span>
+      </div>
+
+      <h1 class="hero-name reveal-up" style="--d:.1s">
+        <span class="hn-first">Sankalp</span>
+        <span class="hn-last gradient-text">Khatake</span>
+      </h1>
+
+      <div class="role-box reveal-up" style="--d:.2s">
+        <span class="role-prefix">&gt;&nbsp;</span>
+        <span id="typewriter"></span>
+        <span class="cur-blink">|</span>
+      </div>
+
+      <p class="hero-bio reveal-up" style="--d:.3s">
+        Building intelligent AI systems with Generative AI, Computer Vision, Machine Learning, and
+        IoT &amp; Edge Intelligence. Turning deep research into measurable real-world impact.
+      </p>
+
+      <div class="hero-btns reveal-up" style="--d:.4s">
+        <a href="#projects" class="btn-glow"><span class="btn-pulse">◉</span> Explore Work</a>
+        <a href="#contact"  class="btn-outline">Get In Touch →</a>
+      </div>
+
+      <div class="hero-socials reveal-up" style="--d:.5s">
+        <a href="https://github.com/sankalpkhatake07"         target="_blank" class="soc-btn gh"  aria-label="GitHub">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+        <a href="https://linkedin.com/in/sankalp-khatake"     target="_blank" class="soc-btn li" aria-label="LinkedIn">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+        </a>
+        <a href="mailto:sankalpkhatake07@gmail.com"           class="soc-btn em" aria-label="Email">
+          <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/></svg>
+        </a>
+      </div>
+    </div><!-- /hero-left -->
+
+    <!-- RIGHT: PHOTO + ORB -->
+    <div class="hero-right reveal-up" style="--d:.2s">
+      <div class="orb-scene">
+        <!-- ★ YOUR PHOTO ★
+             Replace  assets/profile.jpg  with your actual image file.
+             Put the image inside the  assets/  folder next to index.html.
+             Supported formats: .jpg  .jpeg  .png  .webp
+        -->
+        <div class="profile-frame">
+          <img
+            src="data/photo.jpg"
+            alt="Sankalp Khatake"
+            class="profile-img"
+            onerror="this.style.display='none';document.querySelector('.profile-fallback').style.display='flex';"
+          />
+          <div class="profile-fallback">
+            <span class="pf-initials">SK</span>
+            <!-- <span class="pf-hint">📁 Place your photo at<br/><code>data/photo.jpg</code></span> -->
+          </div>
+          <div class="profile-ring pr1"></div>
+          <div class="profile-ring pr2"></div>
+          <div class="profile-ring pr3"></div>
+          <div class="profile-glow"></div>
+        </div>
+
+        <!-- floating tech pills -->
+        <div class="float-pill fp1"><span class="fp-dot"></span>Python</div>
+        <div class="float-pill fp2"><span class="fp-dot"></span>YOLOv8</div>
+        <div class="float-pill fp3"><span class="fp-dot"></span>LangChain</div>
+        <div class="float-pill fp4"><span class="fp-dot"></span>AWS</div>
+        <div class="float-pill fp5"><span class="fp-dot"></span>PyTorch</div>
+        <div class="float-pill fp6"><span class="fp-dot"></span>OpenCV</div>
+
+        <!-- stat chips -->
+        <div class="hero-chip chip-top">
+          <span class="chip-num">7+</span>
+          <span class="chip-lbl">Hackathon Wins</span>
+        </div>
+        <div class="hero-chip chip-bot">
+          <span class="chip-num">2×</span>
+          <span class="chip-lbl">Govt. Copyright</span>
+        </div>
+      </div>
+    </div><!-- /hero-right -->
+
+  </div><!-- /hero-wrap -->
+
+  <!-- STATS STRIP -->
+  <div class="stats-strip">
+    <div class="st-box" data-target="7"   data-suf="+"><div class="st-num">0</div><div class="st-lbl">Hackathon Wins</div></div>
+    <div class="st-div"></div>
+    <div class="st-box" data-target="2"   data-suf=""><div class="st-num">0</div><div class="st-lbl">Govt. Copyrights</div></div>
+    <div class="st-div"></div>
+    <div class="st-box" data-target="100" data-suf="+"><div class="st-num">0</div><div class="st-lbl">Students Mentored</div></div>
+    <div class="st-div"></div>
+    <div class="st-box" data-target="95"  data-suf="%"><div class="st-num">0</div><div class="st-lbl">AI Model Accuracy</div></div>
+  </div>
+
+  <div class="scroll-hint">
+    <div class="sc-mouse"><div class="sc-wheel"></div></div>
+    <span>Scroll to explore</span>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ ABOUT ══════ -->
+<section id="about">
+  <div class="sec-wrap">
+    <div class="sec-hd reveal-up">
+      <div class="sec-tag"> </div>
+      <h2 class="sec-title">Who I Am</h2>
+      <p class="sec-sub">Passionate AI Engineer at the intersection of research &amp; deployment</p>
+    </div>
+    <div class="about-grid">
+      <div class="about-visual reveal-left">
+        <div class="av-card">
+          <div class="av-avatar">
+            <img
+              src="assets/profile.jpg"
+              alt="Sankalp Khatake"
+              class="av-img"
+              onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+            />
+            <div class="av-initials-fb">SK</div>
+            <div class="av-r1"></div><div class="av-r2"></div>
+          </div>
+          <div class="av-name">Sankalp Khatake</div>
+          <div class="av-role">B.Tech AI Engineer</div>
+          <div class="av-loc">📍 India</div>
+          <div class="av-metrics">
+            <div><span class="avm-n">2026</span><span class="avm-l">Graduation</span></div>
+            <div><span class="avm-n">5+</span><span class="avm-l">Projects</span></div>
+            <div><span class="avm-n">7+</span><span class="avm-l">Hackathons</span></div>
+          </div>
+          <div class="av-tags">
+            <span>AI Research</span><span>Machine Learning</span><span>Gen AI</span><span>Vision</span>
+          </div>
+        </div>
+      </div>
+      <div class="about-body reveal-right">
+        <p class="about-bio">I'm a B.Tech AI Engineer with a research-first mindset, building systems that bridge cutting-edge AI research and real-world deployment. I specialize in Generative AI, Computer Vision, and IoT ecosystems — always focused on measurable impact.</p>
+        <div class="about-cards">
+          <div class="ac"><div class="ac-ico">🧠</div><div><div class="ac-t">Generative AI Builder</div><div class="ac-d">LangChain · RAG · LLM Ops</div></div></div>
+          <div class="ac"><div class="ac-ico">👁️</div><div><div class="ac-t">Computer Vision Expert</div><div class="ac-d">YOLOv8 · OpenCV · Edge</div></div></div>
+          <div class="ac"><div class="ac-ico">📡</div><div><div class="ac-t">IoT Innovator</div><div class="ac-d">ESP8266 · MQTT · Fusion</div></div></div>
+          <div class="ac"><div class="ac-ico">🏆</div><div><div class="ac-t">Hackathon Champion</div><div class="ac-d">7+ wins · Rapid Prototype</div></div></div>
+        </div>
+        <div class="about-hl">
+          <div class="ahl">▹ Research + engineering mindset — bridging theory and deployment</div>
+          <div class="ahl">▹ Built for hackathon-speed innovation with production-level quality</div>
+          <div class="ahl">▹ 2× Govt. of India Copyright holder for AI innovations</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ SKILLS ══════ -->
+<section id="skills">
+  <div class="sec-wrap">
+    <div class="sec-hd reveal-up">
+      <div class="sec-tag"></div>
+      <h2 class="sec-title">Technical Arsenal</h2>
+      <p class="sec-sub">Proficiency levels across every domain</p>
+    </div>
+
+    <!-- FILTER TABS -->
+    <div class="sk-filters reveal-up">
+      <button class="skf active" data-f="all">All</button>
+      <button class="skf" data-f="ai">AI / ML</button>
+      <button class="skf" data-f="vision">Vision</button>
+      <button class="skf" data-f="genai">GenAI</button>
+      <button class="skf" data-f="stack">Full Stack</button>
+      <button class="skf" data-f="cloud">Cloud</button>
+      <button class="skf" data-f="iot">IoT</button>
+    </div>
+
+    <!-- SKILL CARDS (with sub-feature bars) -->
+    <div class="sk-grid" id="skillGrid">
+
+      <!-- AI / ML -->
+      <div class="sk-card reveal-up" data-cat="ai">
+        <div class="sk-glow"></div>
+        <div class="sk-hd">
+          <span class="sk-ico">🤖</span>
+          <div>
+            <div class="sk-cat">AI / ML</div>
+            <div class="sk-master-bar"><div class="sk-master-fill" style="--w:92%"></div></div>
+            <div class="sk-master-pct">92%</div>
+          </div>
+        </div>
+        <div class="sk-subs">
+          <div class="sk-sub"><span class="ss-name">Python</span><div class="ss-bar"><div class="ss-fill" style="--w:96%"></div></div><span class="ss-pct">96%</span></div>
+          <div class="sk-sub"><span class="ss-name">TensorFlow</span><div class="ss-bar"><div class="ss-fill" style="--w:88%"></div></div><span class="ss-pct">88%</span></div>
+          <div class="sk-sub"><span class="ss-name">PyTorch</span><div class="ss-bar"><div class="ss-fill" style="--w:85%"></div></div><span class="ss-pct">85%</span></div>
+          <div class="sk-sub"><span class="ss-name">Scikit-Learn</span><div class="ss-bar"><div class="ss-fill" style="--w:90%"></div></div><span class="ss-pct">90%</span></div>
+        </div>
+      </div>
+
+      <!-- GENERATIVE AI -->
+      <div class="sk-card reveal-up" data-cat="genai" style="animation-delay:.05s">
+        <div class="sk-glow"></div>
+        <div class="sk-hd">
+          <span class="sk-ico">✨</span>
+          <div>
+            <div class="sk-cat">Generative AI</div>
+            <div class="sk-master-bar"><div class="sk-master-fill" style="--w:88%"></div></div>
+            <div class="sk-master-pct">88%</div>
+          </div>
+        </div>
+        <div class="sk-subs">
+          <div class="sk-sub"><span class="ss-name">LangChain</span><div class="ss-bar"><div class="ss-fill" style="--w:90%"></div></div><span class="ss-pct">90%</span></div>
+          <div class="sk-sub"><span class="ss-name">RAG Systems</span><div class="ss-bar"><div class="ss-fill" style="--w:87%"></div></div><span class="ss-pct">87%</span></div>
+          <div class="sk-sub"><span class="ss-name">Prompt Eng.</span><div class="ss-bar"><div class="ss-fill" style="--w:92%"></div></div><span class="ss-pct">92%</span></div>
+          <div class="sk-sub"><span class="ss-name">LLM Ops</span><div class="ss-bar"><div class="ss-fill" style="--w:82%"></div></div><span class="ss-pct">82%</span></div>
+        </div>
+      </div>
+
+      <!-- COMPUTER VISION -->
+      <div class="sk-card reveal-up" data-cat="vision" style="animation-delay:.10s">
+        <div class="sk-glow"></div>
+        <div class="sk-hd">
+          <span class="sk-ico">👁️</span>
+          <div>
+            <div class="sk-cat">Computer Vision</div>
+            <div class="sk-master-bar"><div class="sk-master-fill" style="--w:90%"></div></div>
+            <div class="sk-master-pct">90%</div>
+          </div>
+        </div>
+        <div class="sk-subs">
+          <div class="sk-sub"><span class="ss-name">OpenCV</span><div class="ss-bar"><div class="ss-fill" style="--w:94%"></div></div><span class="ss-pct">94%</span></div>
+          <div class="sk-sub"><span class="ss-name">YOLOv8</span><div class="ss-bar"><div class="ss-fill" style="--w:91%"></div></div><span class="ss-pct">91%</span></div>
+          <div class="sk-sub"><span class="ss-name">Segmentation</span><div class="ss-bar"><div class="ss-fill" style="--w:85%"></div></div><span class="ss-pct">85%</span></div>
+          <div class="sk-sub"><span class="ss-name">Edge Inference</span><div class="ss-bar"><div class="ss-fill" style="--w:88%"></div></div><span class="ss-pct">88%</span></div>
+        </div>
+      </div>
+
+      <!-- FULL STACK -->
+      <div class="sk-card reveal-up" data-cat="stack" style="animation-delay:.15s">
+        <div class="sk-glow"></div>
+        <div class="sk-hd">
+          <span class="sk-ico">⚡</span>
+          <div>
+            <div class="sk-cat">Full Stack</div>
+            <div class="sk-master-bar"><div class="sk-master-fill" style="--w:80%"></div></div>
+            <div class="sk-master-pct">80%</div>
+          </div>
+        </div>
+        <div class="sk-subs">
+          <div class="sk-sub"><span class="ss-name">React/Next.js</span><div class="ss-bar"><div class="ss-fill" style="--w:82%"></div></div><span class="ss-pct">82%</span></div>
+          <div class="sk-sub"><span class="ss-name">FastAPI</span><div class="ss-bar"><div class="ss-fill" style="--w:85%"></div></div><span class="ss-pct">85%</span></div>
+          <div class="sk-sub"><span class="ss-name">Node.js</span><div class="ss-bar"><div class="ss-fill" style="--w:76%"></div></div><span class="ss-pct">76%</span></div>
+          <div class="sk-sub"><span class="ss-name">MongoDB</span><div class="ss-bar"><div class="ss-fill" style="--w:80%"></div></div><span class="ss-pct">80%</span></div>
+        </div>
+      </div>
+
+      <!-- CLOUD -->
+      <div class="sk-card reveal-up" data-cat="cloud" style="animation-delay:.20s">
+        <div class="sk-glow"></div>
+        <div class="sk-hd">
+          <span class="sk-ico">☁️</span>
+          <div>
+            <div class="sk-cat">Cloud &amp; DevOps</div>
+            <div class="sk-master-bar"><div class="sk-master-fill" style="--w:82%"></div></div>
+            <div class="sk-master-pct">82%</div>
+          </div>
+        </div>
+        <div class="sk-subs">
+          <div class="sk-sub"><span class="ss-name">AWS</span><div class="ss-bar"><div class="ss-fill" style="--w:84%"></div></div><span class="ss-pct">84%</span></div>
+          <div class="sk-sub"><span class="ss-name">Docker</span><div class="ss-bar"><div class="ss-fill" style="--w:80%"></div></div><span class="ss-pct">80%</span></div>
+          <div class="sk-sub"><span class="ss-name">GitHub Actions</span><div class="ss-bar"><div class="ss-fill" style="--w:78%"></div></div><span class="ss-pct">78%</span></div>
+          <div class="sk-sub"><span class="ss-name">Firebase</span><div class="ss-bar"><div class="ss-fill" style="--w:86%"></div></div><span class="ss-pct">86%</span></div>
+        </div>
+      </div>
+
+      <!-- IoT -->
+      <div class="sk-card reveal-up" data-cat="iot" style="animation-delay:.25s">
+        <div class="sk-glow"></div>
+        <div class="sk-hd">
+          <span class="sk-ico">📡</span>
+          <div>
+            <div class="sk-cat">IoT</div>
+            <div class="sk-master-bar"><div class="sk-master-fill" style="--w:87%"></div></div>
+            <div class="sk-master-pct">87%</div>
+          </div>
+        </div>
+        <div class="sk-subs">
+          <div class="sk-sub"><span class="ss-name">Arduino</span><div class="ss-bar"><div class="ss-fill" style="--w:90%"></div></div><span class="ss-pct">90%</span></div>
+          <div class="sk-sub"><span class="ss-name">ESP8266/32</span><div class="ss-bar"><div class="ss-fill" style="--w:88%"></div></div><span class="ss-pct">88%</span></div>
+          <div class="sk-sub"><span class="ss-name">MQTT</span><div class="ss-bar"><div class="ss-fill" style="--w:85%"></div></div><span class="ss-pct">85%</span></div>
+          <div class="sk-sub"><span class="ss-name">Sensor Fusion</span><div class="ss-bar"><div class="ss-fill" style="--w:84%"></div></div><span class="ss-pct">84%</span></div>
+        </div>
+      </div>
+
+    </div><!-- /sk-grid -->
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ PROJECTS ══════ -->
+<section id="projects">
+  <div class="sec-wrap">
+    <div class="sec-hd reveal-up">
+      <div class="sec-tag"></div>
+      <h2 class="sec-title">Featured Projects</h2>
+      <p class="sec-sub">Real-world AI systems built for measurable impact</p>
+    </div>
+
+    <div class="proj-grid">
+
+      <div class="proj-card featured reveal-up">
+        <div class="pc-top-bar"></div>
+        <div class="pc-num">01</div>
+        <div class="pc-badge copyright">🌿 Copyright Registered</div>
+        <h3 class="pc-title">AgriAura</h3>
+        <p class="pc-desc">AI-powered smart irrigation ecosystem combining sensor telemetry, weather intelligence, NDVI signals and predictive watering control.</p>
+        <ul class="pc-feats">
+          <li>Adaptive irrigation schedules with weather-aware ML</li>
+          <li>30% water savings &amp; 45% higher irrigation accuracy</li>
+          <li>Govt. of India Copyright — LD-32050/2025-CO</li>
+        </ul>
+        <div class="pc-stack"><span>Python</span><span>IoT</span><span>ESP8266</span><span>Firebase</span><span>AWS</span></div>
+        <div class="pc-footer">
+          <div class="pc-impacts"><div class="pi"><span class="piv">30%</span><span class="pil">Water Saved</span></div><div class="pi"><span class="piv">45%</span><span class="pil">Accuracy</span></div></div>
+          <a href="https://github.com/sankalpkhatake07/Water_irrigation-" target="_blank" class="pc-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-up" style="animation-delay:.08s">
+        <div class="pc-top-bar"></div>
+        <div class="pc-num">02</div>
+        <div class="pc-badge copyright">🦺 Copyright Registered</div>
+        <h3 class="pc-title">VisionGuard</h3>
+        <p class="pc-desc">AI obstacle awareness system for visually impaired users with edge inference and sensor fusion for real-world navigation.</p>
+        <ul class="pc-feats">
+          <li>Low-latency obstacle recognition at the edge</li>
+          <li>Navigation assistance improved by 40%</li>
+          <li>Govt. of India Copyright — LD-46387/2025-CO</li>
+        </ul>
+        <div class="pc-stack"><span>YOLO</span><span>OpenCV</span><span>Raspberry Pi</span><span>Python</span></div>
+        <div class="pc-footer">
+          <div class="pc-impacts"><div class="pi"><span class="piv">40%</span><span class="pil">Navigation Boost</span></div></div>
+          <a href="https://github.com/sankalpkhatake07/VisionGuard_project" target="_blank" class="pc-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-up" style="animation-delay:.16s">
+        <div class="pc-top-bar"></div>
+        <div class="pc-num">03</div>
+        <h3 class="pc-title">Vital Monitoring System</h3>
+        <p class="pc-desc">Healthcare monitoring suite with real-time vitals tracking and predictive risk scoring for proactive clinical intervention.</p>
+        <ul class="pc-feats">
+          <li>Multi-sensor health ingestion pipeline</li>
+          <li>92% cardiac risk prediction accuracy</li>
+          <li>Automated cloud alerts &amp; anomaly detection</li>
+        </ul>
+        <div class="pc-stack"><span>Python</span><span>ML</span><span>ESP32</span><span>Streamlit</span></div>
+        <div class="pc-footer">
+          <div class="pc-impacts"><div class="pi"><span class="piv">92%</span><span class="pil">Accuracy</span></div></div>
+          <a href="https://github.com/sankalpkhatake07/Heartbeat-IOT" target="_blank" class="pc-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-up" style="animation-delay:.24s">
+        <div class="pc-top-bar"></div>
+        <div class="pc-num">04</div>
+        <h3 class="pc-title">CO2 Emission Prediction</h3>
+        <p class="pc-desc">Industrial emission &amp; failure prediction for predictive maintenance and sustainability planning with what-if simulation.</p>
+        <ul class="pc-feats">
+          <li>Forecasting and what-if simulation engine</li>
+          <li>95% fault detection accuracy</li>
+          <li>Reduced unplanned downtime by 28%</li>
+        </ul>
+        <div class="pc-stack"><span>Python</span><span>ML</span><span>ESP32</span><span>AWS</span></div>
+        <div class="pc-footer">
+          <div class="pc-impacts"><div class="pi"><span class="piv">95%</span><span class="pil">Fault Detection</span></div><div class="pi"><span class="piv">28%</span><span class="pil">Less Downtime</span></div></div>
+          <a href="https://github.com/sankalpkhatake07/Heliosense" target="_blank" class="pc-link">GitHub ↗</a>
+        </div>
+      </div>
+
+      <div class="proj-card reveal-up" style="animation-delay:.32s">
+        <div class="pc-top-bar"></div>
+        <div class="pc-num">05</div>
+        <h3 class="pc-title">Chain Snatching Detection</h3>
+        <p class="pc-desc">Real-time surveillance intelligence using YOLOv8 for suspicious activity detection and instant event alerts via WebSockets.</p>
+        <ul class="pc-feats">
+          <li>Live anomaly detection with minimal latency</li>
+          <li>Instant incident notifications via WebSockets</li>
+          <li>Forensic event tagging &amp; playback</li>
+        </ul>
+        <div class="pc-stack"><span>YOLOv8</span><span>OpenCV</span><span>Flask</span><span>WebSockets</span></div>
+        <div class="pc-footer">
+          <a href="https://github.com/sankalpkhatake07/SUGARCANE_AI" target="_blank" class="pc-link">GitHub ↗</a>
+        </div>
+      </div>
+
+    </div><!-- /proj-grid -->
+
+    <!-- ★ MORE PROJECTS BOX ★ -->
+    <div class="more-projects-box reveal-up">
+      <div class="mpb-bg"></div>
+      <div class="mpb-content">
+        <div class="mpb-icon">🚀</div>
+        <div class="mpb-text">
+          <div class="mpb-title">Explore All Projects</div>
+          <div class="mpb-sub">More repositories — Sugarcane AI, Heliosense, AgriDashboard, Face Recognition, NLP Tools &amp; more on GitHub</div>
+        </div>
+        <a href="https://github.com/sankalpkhatake07?tab=repositories" target="_blank" class="mpb-btn">
+          <span>View All on GitHub</span>
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z"/></svg>
+        </a>
+      </div>
+      <div class="mpb-count">
+        <span class="mpc-n">20+</span>
+        <span class="mpc-l">Public Repositories</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ EXPERIENCE ══════ -->
+<section id="experience">
+  <div class="sec-wrap">
+    <div class="sec-hd reveal-up">
+      <div class="sec-tag"></div>
+      <h2 class="sec-title">Experience</h2>
+      <p class="sec-sub">Professional journey building real-world AI systems</p>
+    </div>
+    <div class="timeline">
+      <div class="tl-spine"></div>
+      <div class="tl-item reveal-left">
+        <div class="tl-dot"><div class="tld-inner"></div></div>
+        <div class="tl-card">
+          <div class="tlc-top">
+            <div><div class="tlc-dur">Jan 2026 – May 2026</div><div class="tlc-role">AI &amp; IoT Innovation Intern</div><div class="tlc-org">Krishi Vigyan Kendra (KVK)</div></div>
+            <div class="tlc-badge">92% Accuracy</div>
+          </div>
+          <div class="tlc-techs"><span>YOLO</span><span>Roboflow</span><span>React</span><span>AWS</span><span>Firebase</span></div>
+          <ul class="tlc-ach">
+            <li>Built YOLO-based sugarcane disease detection and smart irrigation solution</li>
+            <li>Integrated predictive analytics with full-stack dashboard workflows</li>
+            <li>Delivered production-like pipeline with cloud data services</li>
+          </ul>
+          <div class="tlc-impact"><span>⚡</span> 92% detection accuracy &amp; 30% water efficiency improvement</div>
+        </div>
+      </div>
+      <div class="tl-item reveal-right" style="animation-delay:.12s">
+        <div class="tl-dot"><div class="tld-inner"></div></div>
+        <div class="tl-card">
+          <div class="tlc-top">
+            <div><div class="tlc-dur">Jan 2026 – May 2026</div><div class="tlc-role">AI/ML Engineering Intern</div><div class="tlc-org">Uptoskill</div></div>
+            <div class="tlc-badge">35% Faster</div>
+          </div>
+          <div class="tlc-techs"><span>LangChain</span><span>LangGraph</span><span>YOLO</span><span>OpenCV</span><span>FastAPI</span></div>
+          <ul class="tlc-ach">
+            <li>Developed LLM, RAG, AI agent, and anomaly monitoring systems</li>
+            <li>Optimized retrieval &amp; caching pipelines for faster responses</li>
+            <li>Improved real-time inference for surveillance applications</li>
+          </ul>
+          <div class="tlc-impact"><span>⚡</span> 35% retrieval speed gain &amp; 40% inference performance boost</div>
+        </div>
+      </div>
+<div class="tl-item reveal-right" style="animation-delay:.12s">
+        <div class="tl-dot"><div class="tld-inner"></div></div>
+        <div class="tl-card">
+          <div class="tlc-top">
+            <div><div class="tlc-dur">Aug 2025 - Sept 2025</div><div class="tlc-role">Full Stack Development Intern </div><div class="tlc-org">Edunet Foundation</div></div>
+            <div class="tlc-badge">Full Stack Efficiency</div>
+          </div>
+          <div class="tlc-techs"><span>OpenCV</span><span>FastAPI</span><span>React</span><span>PostgreSQL</span></div>
+          <ul class="tlc-ach">
+            <li>Designed responsive web interfaces ensuring cross-browser and cross-device compatibility</li>
+            <li>Developed interactive UI components with HTML, CSS, and JavaScript, integrating REST APIs for dynamic content</li>
+            <li>Optimized Git/GitHub workflows to streamline collaboration and deployment in real-world capstone projects</li>
+          </ul>
+          <div class="tlc-impact"><span>⚡</span> 35% faster end‑to‑end deployment &amp; 40% improvement in API response efficiency</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ CERTIFICATIONS ══════ -->
+<section id="certifications">
+  <div class="sec-wrap">
+    <div class="sec-hd reveal-up">
+      <div class="sec-tag"></div>
+      <h2 class="sec-title">Certifications</h2>
+      <p class="sec-sub">Verified credentials, official recognitions &amp; copyright registrations</p>
+    </div>
+
+    <!-- TICKER -->
+    <div class="cert-ticker reveal-up">
+      <div class="ct-track">
+        <span class="ct-item"><span class="ct-dot"></span>Generative AI Engineering Professional</span>
+        <span class="ct-item"><span class="ct-dot"></span>Advanced Computer Vision — Deep Learning</span>
+        <span class="ct-item"><span class="ct-dot"></span>AWS Cloud Practitioner</span>
+        <span class="ct-item"><span class="ct-dot"></span>Machine Learning Specialization</span>
+        <span class="ct-item"><span class="ct-dot"></span>IoT Systems Architecture</span>
+        <span class="ct-item"><span class="ct-dot"></span>LangChain for LLM Applications</span>
+        <span class="ct-item"><span class="ct-dot"></span>Deep Learning Specialization</span>
+        <span class="ct-item"><span class="ct-dot"></span>Generative AI Engineering Professional</span>
+        <span class="ct-item"><span class="ct-dot"></span>Advanced Computer Vision — Deep Learning</span>
+        <span class="ct-item"><span class="ct-dot"></span>AWS Cloud Practitioner</span>
+        <span class="ct-item"><span class="ct-dot"></span>Machine Learning Specialization</span>
+        <span class="ct-item"><span class="ct-dot"></span>IoT Systems Architecture</span>
+        <span class="ct-item"><span class="ct-dot"></span>LangChain for LLM Applications</span>
+        <span class="ct-item"><span class="ct-dot"></span>Deep Learning Specialization</span>
+      </div>
+    </div>
+
+    <!-- CERT CARDS GRID -->
+    <div class="cert-grid">
+
+      <!-- ★ CERT 1 ★
+           HOW TO ADD YOUR IMAGE:
+           1. Place your certificate image file in the  assets/  folder
+           2. Replace  assets/cert1.jpg  with your actual filename
+           3. Example: assets/genai-certificate.png
+      -->
+      <div class="cert-card reveal-up">
+        <div class="cc-ribbon">CERTIFIED</div>
+        <div class="cc-img-wrap ai-grad">
+          <img src="data/Android & Cloud Core Team Member.png" alt="GenAI Cert"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">🤖</div>
+            <div class="ccph-hint">📁 data/Android & Cloud Core Team Member.png</div>
+          </div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Android & Cloud Core Team Member</div>
+          <div class="cc-issuer">Professional Certification</div>
+          <div class="cc-tags"><span>AI</span><span>Cloud </span><span>GenAI</span><span>Android</span></div>
+          <!-- Add your Drive link below -->
+          <a href="https://drive.google.com/file/d/1c2k90oQ-kmAdx7lINLyy0TjT6zvyA6pY/view?usp=drive_link" target="_blank" class="cc-drive-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- ★ CERT 2 ★ -->
+      <div class="cert-card reveal-up" style="animation-delay:.08s">
+        <div class="cc-ribbon">CERTIFIED</div>
+        <div class="cc-img-wrap cv-grad">
+          <img src="data/AR_VR.png" alt="CV Cert"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">👁️</div>
+            <div class="ccph-hint">📁 assets/cert2.jpg</div>
+          </div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Augmented and Virtual Reality</div>
+          <div class="cc-issuer">Deep Learning</div>
+          <div class="cc-tags"><span>CV</span><span>YOLO</span><span>DL</span></div>
+          <a href="https://drive.google.com/file/d/1BLE-_mF5zZUk6dP9Oijk2qwrfU3p4gxg/view?usp=drive_link" target="_blank" class="cc-drive-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- ★ CERT 3 ★ -->
+      <div class="cert-card reveal-up" style="animation-delay:.16s">
+        <div class="cc-ribbon">CERTIFIED</div>
+        <div class="cc-img-wrap aws-grad">
+          <img src="data/Quantum Algorithms using Qniverse.png" alt="AWS Cert"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">☁️</div>
+            <div class="ccph-hint">📁 assets/cert3.jpg</div>
+          </div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Quantum Algorithms using Qniverse</div>
+          <div class="cc-issuer">Hamiltonian Simulation</div>
+          <div class="cc-tags"><span>ADAPT-VQE</span><span>Quantum Phase Estimation</span><span>QML</span></div>
+          <a href="https://drive.google.com/YOUR_CERT3_LINK" target="_blank" class="cc-drive-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- ★ CERT 4 ★ -->
+      <div class="cert-card reveal-up" style="animation-delay:.24s">
+        <div class="cc-ribbon">CERTIFIED</div>
+        <div class="cc-img-wrap ml-grad">
+          <img src="data/Completion AI Model.jpg" alt="ML Cert"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">📊</div>
+            <div class="ccph-hint">📁 data/Completion AI Model.jpg</div>
+          </div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Build Own Generative AI model</div>
+          <div class="cc-issuer">PyTorch</div>
+          <div class="cc-tags"><span>ML</span><span>DL</span><span>Hugging Face</span></div>
+          <a href="https://drive.google.com/file/d/1XeZggLb2N4sDElxYQ3Rk2ufiwli4ByC4/view?usp=drive_link" target="_blank" class="cc-drive-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- ★ CERT 5 ★ -->
+      <div class="cert-card reveal-up" style="animation-delay:.32s">
+        <div class="cc-ribbon">CERTIFIED</div>
+        <div class="cc-img-wrap iot-grad">
+          <img src="data/IEEE_Membership.png" alt="IoT Cert"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">📡</div>
+            <div class="ccph-hint">📁 data/IEEE_Membership.png</div>
+          </div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">IEEE Membership Certificate</div>
+          <div class="cc-issuer">Research</div>
+          <div class="cc-tags"><span>Engineering</span></div>
+          <a href="https://drive.google.com/YOUR_CERT5_LINK" target="_blank" class="cc-drive-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- ★ CERT 6 — LangChain ★ -->
+      <div class="cert-card reveal-up">
+        <div class="cc-ribbon">CERTIFIED</div>
+        <div class="cc-img-wrap ai-grad">
+          <img src="data/n8n_traning_program.png" alt="GenAI Cert"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">🤖</div>
+            <div class="ccph-hint">📁 assets/cert1.jpg</div>
+          </div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">Build Workflow Automation and AI Agents </div>
+          <div class="cc-issuer">Professional Certification</div>
+          <div class="cc-tags"><span>AI</span><span>LLM</span><span>GenAI</span><span>n8n</span></div>
+          <!-- Add your Drive link below -->
+          <a href="https://drive.google.com/file/d/1c2k90oQ-kmAdx7lINLyy0TjT6zvyA6pY/view?usp=drive_link" target="_blank" class="cc-drive-btn">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Certificate
+          </a>
+        </div>
+      </div>
+
+      <!-- ★ GOVT COPYRIGHT 1 ★ -->
+      <div class="cert-card gov-card reveal-up" style="animation-delay:.48s">
+        <div class="cc-ribbon gov">COPYRIGHT</div>
+        <div class="cc-img-wrap gov-grad">
+          <img src="data/AgriAura.png" alt="AgriAura Copyright"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">🌿</div>
+            <div class="ccph-hint">📁 data/AgriAura.png</div>
+          </div>
+          <div class="cc-emblem">🇮🇳</div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">AgriAura — AI Smart Irrigation</div>
+          <div class="cc-issuer gov-issuer">Govt. of India Copyright</div>
+          <div class="cc-reg">Reg. No: LD-32050/2025-CO</div>
+          <div class="cc-tags"><span class="gov-tag">Official</span><span class="gov-tag">2025</span><span class="gov-tag">AI</span></div>
+          <a href="https://drive.google.com/file/d/1lJKFuXy92ohqaE3Jp-KkMKBjoUBaF9yC/view?usp=drive_link" target="_blank" class="cc-drive-btn gov-drive">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Official Document
+          </a>
+        </div>
+      </div>
+
+      <!-- ★ GOVT COPYRIGHT 2 ★ -->
+      <div class="cert-card gov-card reveal-up" style="animation-delay:.56s">
+        <div class="cc-ribbon gov">COPYRIGHT</div>
+        <div class="cc-img-wrap gov-grad">
+          <img src="data/VisionGuard_02.jpeg" alt="VisionGuard Copyright"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">🦺</div>
+            <div class="ccph-hint">📁 data/VisionGuard_02.jpeg</div>
+          </div>
+          <div class="cc-emblem">🇮🇳</div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">VisionGuard — Assistive AI System</div>
+          <div class="cc-issuer gov-issuer">Govt. of India Copyright</div>
+          <div class="cc-reg">Reg. No: LD-46387/2025-CO</div>
+          <div class="cc-tags"><span class="gov-tag">Official</span><span class="gov-tag">2025</span><span class="gov-tag">Vision</span></div>
+          <a href="https://drive.google.com/file/d/1BeoylgRROSeO4TLZOaAFgQYYE0hEOeAZ/view?usp=drive_link" target="_blank" class="cc-drive-btn gov-drive">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Official Document
+          </a>
+        </div>
+      </div>
+
+    </div><!-- /cert-grid -->
+      <div class="cert-card gov-card reveal-up" style="animation-delay:.56s">
+        <div class="cc-ribbon gov">COPYRIGHT</div>
+        <div class="cc-img-wrap gov-grad">
+          <img src=" " alt="More Certificates"
+               onerror="this.style.display='none';this.nextElementSibling.style.display='flex'"/>
+          <div class="cc-placeholder" style="display:none">
+            <div class="ccph-icon">🦺</div>
+            <div class="ccph-hint">📁 More Certificates</div>
+          </div>
+          <div class="cc-emblem">🇮🇳</div>
+          <div class="cc-shimmer"></div>
+        </div>
+        <div class="cc-body">
+          <div class="cc-title">View More Certificates</div>
+          <div class="cc-issuer gov-issuer"></div>
+          <div class="cc-reg"></div>
+          <div class="cc-tags"><span class="gov-tag">Official</span><span class="gov-tag"></span><span class="gov-tag">Certicates</span></div>
+          <a href="https://drive.google.com/drive/folders/1Yhgy5apQl1kqNuajTmdu-t0hUh8e6qyq?usp=drive_link" target="_blank" class="cc-drive-btn gov-drive">
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 16l-5-5 1.41-1.41L11 13.17V4h2v9.17l2.59-2.58L17 11zm-9 4h18v2H3z"/></svg>
+            View Official Document
+          </a>
+        </div>
+      </div>
+
+
+    <div class="cert-note"> <code></code> <code></code>) 
+    </div>
+
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════ CONTACT ══════ -->
+<section id="contact">
+  <div class="sec-wrap">
+    <div class="sec-hd reveal-up">
+      <div class="sec-tag"></div>
+      <h2 class="sec-title">Let's Connect</h2>
+      <p class="sec-sub">Open to collaborations, internships &amp; AI opportunities</p>
+    </div>
+    <div class="contact-layout">
+      <div class="contact-left reveal-left">
+        <div class="cl-heading">Have an idea?<br/><span class="gradient-text">Let's build it together.</span></div>
+        <p class="cl-sub">I'm actively looking for opportunities where I can apply my AI engineering skills to solve real-world problems.</p>
+        <div class="cl-links">
+          <a href="mailto:sankalpkhatake07@gmail.com"       class="cli"><div class="cli-ico">📧</div><div><div class="cli-l">Email</div><div class="cli-v">sankalpkhatake07@gmail.com</div></div><div class="cli-arr">→</div></a>
+          <a href="https://github.com/sankalpkhatake07"    target="_blank" class="cli"><div class="cli-ico">🐙</div><div><div class="cli-l">GitHub</div><div class="cli-v">github.com/sankalpkhatake07</div></div><div class="cli-arr">→</div></a>
+          <a href="https://linkedin.com/in/sankalp-khatake" target="_blank" class="cli"><div class="cli-ico">💼</div><div><div class="cli-l">LinkedIn</div><div class="cli-v">linkedin.com/in/sankalp-khatake</div></div><div class="cli-arr">→</div></a>
+          <div class="cli" style="cursor:default"><div class="cli-ico">📍</div><div><div class="cli-l">Location</div><div class="cli-v">India 🇮🇳</div></div></div>
+        </div>
+      </div>
+      <div class="contact-right reveal-right">
+        <form class="cf" id="cForm">
+          <div class="cf-row">
+            <div class="cf-f"><label>Name</label><input type="text" placeholder="Your Name" required/></div>
+            <div class="cf-f"><label>Email</label><input type="email" placeholder="your@email.com" required/></div>
+          </div>
+          <div class="cf-f"><label>Subject</label><input type="text" placeholder="What's this about?"/></div>
+          <div class="cf-f"><label>Message</label><textarea rows="5" placeholder="Tell me about your project..."></textarea></div>
+          <button type="submit" class="btn-glow full">
+            <span class="btn-pulse">◉</span> Send Message
+          </button>
+          <div class="cf-ok" id="cfOk">✅ Message sent! I'll get back to you soon.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="ft-inner">
+    <div class="ft-brand"><span class="brand-bracket">[</span><span class="brand-name">SK</span><span class="brand-bracket">]</span></div>
+    <p class="ft-copy">© 2026 Sankalp Khatake — AI/ML Engineer and Generative AI &amp; Innovator</p>
+    <p class="ft-code"></p>
+  </div>
+</footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
